@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="images/MediSphere-Favicon.png" type="image/png">
 </head>
 <body>
-    
+
 <!-- header section starts  -->
 
 <header class="header">
@@ -48,7 +48,7 @@
     <div class="content">
         <h3>MediSphere :<br> Health equity always!</h3>
         <p>We want to ensure that everyone has the chance to be as healthy as possible.</p>
-        <a href="#" class="btn"> contact us <span class="fas fa-chevron-right"></span> </a>
+        <a href="#contact" class="btn"> contact us <span class="fas fa-chevron-right"></span> </a>
     </div>
 
 </section>
@@ -441,6 +441,37 @@
     }
     }
 </script>
+
+<script type="text/javascript">
+    messaging.requestPermission().then(() => {
+        console.log("Permission Granted");
+        // console.log(message.getToken());
+        return messaging.getToken({
+            vapidKey: "BKEJoaeHf4tYKMz1NFB6sMJslO4x3cUBRfa5NJyrTmnjlyKPOmrxZecyGki17AR9jVj8X9OJ1Y-uKZp_rftoTw8"
+        });
+    }).then((token) => {
+        // sendTokenToServer(token);
+        // updateUIForPushEnabled(token);
+        console.log("Token is : " + token);
+    }).catch((err) => {
+        console.log("Error getting permission" + err.message);
+    })
+
+
+    messaging.onMessage((payload) => {
+        console.log('onMessage script tag : ' + payload);
+    })
+</script>
+
+<!-- Tensorflow Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+<!-- <script src="js/tf.min.js.map"> </script> -->
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+    <script src="https://account.snatchbot.me/script.js"></script>
+    <script>
+        window.sntchChat.Init(247945)
+    </script> 
 
 </body>
 </html>
