@@ -12,7 +12,7 @@ let emailReport = (el) => {
   var userID = auth.currentUser.uid;
   console.log("Email report Clicked : "+ el.id + "Doctor Id : "+userID);
   var pID = el.id;
-  var dest = "tirthgpatel.27@gmail.com";
+  var dest = "abcdxyz123@gmail.com";
   var destUrl = `https://us-central1-pdpu-medical-website.cloudfunctions.net/sendMail?dest=${dest}&dID=${userID}&pID=${pID}`;
   // emailSend.setAttribute("href",destUrl);
   // document.body.appendChild(emailSend);
